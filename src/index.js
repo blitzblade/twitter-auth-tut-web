@@ -1,13 +1,20 @@
 import React from 'react';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
+import Twittercallback from './TwitterCallback'; //new
 import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<App/>} />
+        <Route path="/twitter_auth_callback" element={<Twittercallback/>} />{/*new*/}
+      </Routes>
+    </BrowserRouter>
   </React.StrictMode>
 );
 
