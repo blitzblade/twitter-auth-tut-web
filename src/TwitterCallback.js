@@ -18,9 +18,9 @@ function Twittercallback() {
     const getUserInfo = (params) => {
         axios.get( `${API_URL}/api/twitter_auth_callback`,
                 { params: params })
-                .then(data => {
-                    console.log(data);
-                    setData(data);
+                .then(d => {
+                    console.log(d);
+                    setData(d.data);
                 });
     }
 
